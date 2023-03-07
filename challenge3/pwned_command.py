@@ -26,7 +26,12 @@ def has_email_been_pwned(email):
     pwned_message = f'Oh no you have been pwned. The email "{email}" appeared in {pwned_times} breaches.'
     not_pwned_message = f'All good! The email "{email}" was never pwned.'
 
-    return not_pwned_message
+    if pwned_times > 0:
+        out = pwned_message
+    else:
+        out = not_pwned_message
+    
+    return out
 
 
 def get_sha1_hash(password):
