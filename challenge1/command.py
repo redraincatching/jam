@@ -12,19 +12,21 @@ def hello(message):
     # challenge 1.3: reply to ceo chuck robbins
     if(len(message) == 0): # Challenge 1.1
          message = "Hello, cisco!"
+    elif(len(message) > 0): # Challenge 1.2
+        message = "Hello, "+message+"!"
     # Challenge 1.3
     elif(message.lower() == "chuck robbins"):
         message = "Hello, cisco's favourite ceo "+message+"!"
-    elif(len(message) > 0): # Challenge 1.2
-        message = "Hello, "+message+"!"
+    elif(len(message) == len(cisco)): 
+	    if(sorted(message.lower()) == sorted(cisco.lower())):
+	    	message = "Hello, Cisco in Disguise!"
     # challenge 1.4
+    # this sorta overwrites challenge 1.2, so that's okay
     for i in team:
         if (message.lower() in team):
             message = team[message]
     #Challenge 1.5
-    # elif(len(message) == len(cisco)): 
-	#     if(sorted(message.lower()) == sorted(cisco.lower())):
-	#     	message = "Hello, Cisco in Disguise!"
+
             
     
 
