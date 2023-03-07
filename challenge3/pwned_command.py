@@ -17,41 +17,16 @@ def has_email_been_pwned(email):
     headers = {
         'User-Agent': 'cisco-jam',
         'hibp-api-key': API_TOKEN,
-    }
+    } 
 
-    params = {
-        "Name":"Adobe",
-        "Title":"Adobe",
-        "Domain":"adobe.com",
-        "BreachDate":"2013-10-04",
-        "AddedDate":"2013-12-04T00:00Z",
-        "ModifiedDate":"2022-05-15T23:52Z",
-        "PwnCount":152445165,
-        "Description":"In October 2013, 153 million Adobe accounts were breached with each containing an internal ID, username, email, <em>encrypted</em> password and a password hint in plain text. The password cryptography was poorly done and many were quickly resolved back to plain text. The unencrypted hints also <a href=\"http://www.troyhunt.com/2013/11/adobe-credentials-and-serious.html\" target=\"_blank\" rel=\"noopener\">disclosed much about the passwords</a> adding further to the risk that hundreds of millions of Adobe customers already faced.",
-        "DataClasses":["Email addresses","Password hints","Passwords","Usernames"],
-        "IsVerified":'true',
-        "IsFabricated":'false',
-        "IsSensitive":'false',
-        "IsRetired":'false',
-        "IsSpamList":'false',
-        "LogoPath":"https://haveibeenpwned.com/Content/Images/PwnedLogos/Adobe.png"
-    }
-
-    # Make your GET request here!
-    response = requests.get(url, headers=headers, params=params).json()
-
-    print(json.dumps(response, indent=4))
-
-    print(params["PwnCount"])
-
-    # :(
-
-
-    pwned_times = 0 # This is where you come in!
+    response = requests.get(url, headers=headers).json()
+    
+ 
+    pwned_times = len(response) # This is where you come in!
     pwned_message = f'Oh no you have been pwned. The email "{email}" appeared in {pwned_times} breaches.'
     not_pwned_message = f'All good! The email "{email}" was never pwned.'
 
-    return 'Not yet implemented :('
+    return not_pwned_message
 
 
 def get_sha1_hash(password):
