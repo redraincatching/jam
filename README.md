@@ -46,6 +46,8 @@ Simply enable **share** for your open workspace:
 
 Now, anyone on your team can visit the **URL** for your open workspace, and work together.
 
+![shared workspace - CLICK HERE](https://redraincatching-jam-t4wuo8ar2my.ws-eu89.gitpod.io/)
+
 ## Python cheatsheet
 
 If you want to get up to speed on Python as quick as possible, take a look at `cheatsheet.py`.
