@@ -1,4 +1,4 @@
-# Cisco Jam 2023 Setup Guide
+# TEAM 3: THAT'S US OR WHATEVER
 
 ## Add the Gitpod browser extension to your browser
 
